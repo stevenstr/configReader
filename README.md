@@ -23,3 +23,4 @@ The utility helps to read json configuration file that may contain your configs 
 # Errors
 * code 1 - reading configs problem.
 * code 2 - unmarshal problem.
+* code 3 - marshalindent problem.

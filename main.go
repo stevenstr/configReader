@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 
@@ -10,6 +11,8 @@ import (
 const (
 	configFile = "config.json"
 	configType = "json"
+	prefix     = ""
+	indent     = "\t"
 )
 
 type ConfigStructure struct {
@@ -22,6 +25,15 @@ type ConfigStructure struct {
 	Mongodb      string `mapstructure:"mongodb"`
 	MongodbUser  string `mapstructure:"mongodbUser"`
 	MongodbPort  string `mapstructure:"mongodbPort"`
+}
+
+func PrettyPrint(in interface{}) (string, error) {
+	result, err := json.MarshalIndent(in, prefix, indent)
+	if err != nil {
+		return "", err
+	}
+
+	return string(result), nil
 }
 
 func main() {
@@ -43,4 +55,13 @@ func main() {
 	}
 	fmt.Println("go structure was recieved:")
 	fmt.Printf("%#v\n", cfgData)
+	fmt.Println()
+
+	fmt.Println("Configs pretty print:")
+	result, err := PrettyPrint(cfgData)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(2)
+	}
+	fmt.Println(result)
 }
