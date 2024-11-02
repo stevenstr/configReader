@@ -29,9 +29,7 @@ func main() {
 	viper.SetConfigType(configType)
 	viper.ReadInConfig()
 
-	cfgM := viper.AllSettings()
-	for k, v := range cfgM {
-		fmt.Println(k, ":", v)
-	}
-
+	var cfgData ConfigStructure
+	viper.Unmarshal(&cfgData)
+	fmt.Println(cfgData)
 }
