@@ -10,9 +10,6 @@ import (
 const (
 	configFile = "config.json"
 	configType = "json"
-	sep        = '\n'
-	prefix     = ""
-	indent     = "\t"
 )
 
 type ConfigStructure struct {
