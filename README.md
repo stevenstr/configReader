@@ -18,3 +18,8 @@ The utility helps to read json configuration file that may contain your configs 
 
 # Acces to docs
 - puth to cmd and press enter.
+
+
+# Errors
+* code 1 - reading configs problem.
+* code 2 - unmarshal problem.
