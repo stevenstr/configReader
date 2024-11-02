@@ -1,0 +1,12 @@
+
+    {
+        "linux": "pass_linux",
+        "windows": "pass_windows",
+        "active": true,
+        "postgres": "machine1",
+        "postgresUser": "joshua",
+        "postgresPort": "8",
+        "mongodb": "machine3",
+        "mongodbUser": "joseph",
+        "mongodbPort":"9"
+    }
